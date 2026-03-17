@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ManivelSir</title>
+
+<style>
+body{
+background:black;
+color:white;
+margin:0;
+font-family:sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+.scene{
+width:90vw;
+height:260px;
+margin:60px auto;
+perspective:1000px;
+}
+
+.carousel{
+width:100%;
+height:100%;
+position:relative;
+transform-style:preserve-3d;
+animation:rotate 20s infinite linear;
+}
+
+.carousel img{
+position:absolute;
+width:160px;
+height:200px;
+left:calc(50% - 80px);
+top:30px;
+border-radius:12px;
+object-fit:cover;
+}
+
+.carousel img:nth-child(1){transform: rotateY(0deg) translateZ(220px);}
+.carousel img:nth-child(2){transform: rotateY(72deg) translateZ(220px);}
+.carousel img:nth-child(3){transform: rotateY(144deg) translateZ(220px);}
+.carousel img:nth-child(4){transform: rotateY(216deg) translateZ(220px);}
+.carousel img:nth-child(5){transform: rotateY(288deg) translateZ(220px);}
+
+@keyframes rotate{
+from{transform: rotateY(0deg);}
+to{transform: rotateY(360deg);}
+}
+
+button{
+padding:14px 28px;
+font-size:16px;
+border:none;
+background:#1db954;
+color:white;
+border-radius:30px;
+cursor:pointer;
+margin-top:20px;
+}
+
+@media (min-width: 768px){
+
+.scene{
+width:400px;
+height:300px;
+}
+
+.carousel img{
+width:220px;
+height:260px;
+left:calc(50% - 110px);
+}
+
+.carousel img:nth-child(1){transform: rotateY(0deg) translateZ(300px);}
+.carousel img:nth-child(2){transform: rotateY(72deg) translateZ(300px);}
+.carousel img:nth-child(3){transform: rotateY(144deg) translateZ(300px);}
+.carousel img:nth-child(4){transform: rotateY(216deg) translateZ(300px);}
+.carousel img:nth-child(5){transform: rotateY(288deg) translateZ(300px);}
+
+}
+body{
+background: linear-gradient(135deg, #000000, #1a001a);
+color:white;
+margin:0;
+font-family:sans-serif;
+text-align:center;
+overflow:hidden;
+}
+
+/* Title styling */
+.title{
+font-size:22px;
+margin-top:20px;
+color:#ff4da6;
+text-shadow: 0 0 10px #ff4da6;
+}
+
+/* Floating hearts */
+.heart{
+position:absolute;
+color:#ff4da6;
+font-size:20px;
+animation: float 6s infinite ease-in;
+}
+
+@keyframes float{
+0%{
+transform: translateY(100vh) scale(0.5);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform: translateY(-10vh) scale(1.2);
+opacity:0;
+}
+}
+.footer-text{
+margin-top:20px;
+font-size:16px;
+color:#ff99cc;
+opacity:0.9;
+animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn{
+0%{opacity:0; transform: translateY(20px);}
+100%{opacity:1; transform: translateY(0);}
+}
+
+body{
+min-height:100vh;
+background: linear-gradient(135deg, #1a001a, #4d004d, #000000);
+background-attachment: fixed;
+}
+body{
+min-height:100vh;
+margin:0;
+background: linear-gradient(135deg, #ff0080, #7928ca, #000000);
+background: radial-gradient(circle at top, #ff4da6, #1a001a 60%);
+background-attachment: fixed;
+}
+html, body {
+height: 100%;
+margin: 0;
+}
+.title{
+color: white;
+text-shadow: 0 0 10px #000, 0 0 20px #ff0080;
+}
+</style>
+</head>
+
+<body>
+   
+    <div class="heart" style="left:10%;">❤️</div>
+<div class="heart" style="left:30%; animation-delay:1s;">💖</div>
+<div class="heart" style="left:50%; animation-delay:2s;">💜</div>
+<div class="heart" style="left:70%; animation-delay:3s;">💙</div>
+<div class="heart" style="left:90%; animation-delay:4s;">💚</div>
+
+<h2 class="title">🎉 Happy Birthday Manivel Sir 🎂</h2>
+
+<div class="scene">
+<div class="carousel">
+
+<img src="static/img1.jpg">
+<img src="static/img2.jpg">
+<img src="static/img3.jpg">
+<img src="static/img4.jpg">
+<img src="static/img5.jpg">
+
+</div>
+</div>
+
+<audio id="music">
+<source src="static/music.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusic()">Play Song 🎵</button>
+<p class="footer-text">A Small Tribute For You Sir ❤️</p>
+<script>
+
+var music = document.getElementById("music");
+
+function toggleMusic(){
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+}
+
+</script>
+
+</body>
+</html>
